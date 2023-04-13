@@ -4,6 +4,9 @@ import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
 import { appRouter, AppRouter } from './trpc'
 
 
+const PORT = parseInt(process.env.API_PORT || '') || 3000
+
+
 const fastify = Fastify()
 fastify.register(fastifyTRPCPlugin<AppRouter>, {
     prefix: '/trpc',
@@ -18,6 +21,6 @@ fastify.register(fastifyCors, {
 fastify.get('/test', () => ({ hey: 'response' }))
 
 const main = async () => {
-    await fastify.listen({ port:3000 })
+    await fastify.listen({ port: PORT })
 }
 main()
