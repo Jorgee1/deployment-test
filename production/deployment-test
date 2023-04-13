@@ -2,4 +2,6 @@ server {
     listen 5173 default_server;
 
     root /var/www/depolyment-test/;
+
+    error_page 404 =200 /;
 }
