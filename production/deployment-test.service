@@ -1,0 +1,11 @@
+[Unit]
+Description=Deplyment Test Service
+After=network.target
+
+[Service]
+User=USER
+WorkingDirectory=/home/USER/depolyment-test
+ExecStart=/usr/bin/node server/index.js
+
+[Install]
+WantedBy=multi-user.target
