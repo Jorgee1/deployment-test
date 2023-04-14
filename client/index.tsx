@@ -36,7 +36,7 @@ const Test = () => {
 
 const App = () => {
     const url = new URL(document.URL)
-    const [trpcClient] = useState(() => trpc.createClient({links: [httpBatchLink({url: `http://${url.hostname}:3000/trpc`})]}))
+    const [trpcClient] = useState(() => trpc.createClient({links: [httpBatchLink({url: `/trpc`})]}))
     const [queryClient] = useState(() => new QueryClient())
 
     const router = createBrowserRouter([
